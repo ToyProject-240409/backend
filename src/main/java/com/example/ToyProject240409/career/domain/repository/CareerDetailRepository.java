@@ -17,5 +17,4 @@ public interface CareerDetailRepository extends JpaRepository<CareerDetail,UUID>
     "WHERE c.careerUuid= :careerUuid ")
     List<CareerDetailDto> findDetail(@Param("careerUuid") UUID careerUuid);
 
-
 }
