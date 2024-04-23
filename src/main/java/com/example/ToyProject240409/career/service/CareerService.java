@@ -37,15 +37,6 @@ public class CareerService {
     }
 
     public List<CareerDetailDto> getDetail(UUID careerUuid) {
-        Optional<CareerDetail> careerDetails = careerDetailRepository.findById(careerUuid);
-        List<CareerDetailDto> careerDetailDtos = careerDetails.stream()
-                .map(careerDetail -> new CareerDetailDto(
-                        careerDetail.getAddress(),
-                        careerDetail.getDetailcourse(),
-                        careerDetail.getTel(),
-                        careerDetail.getNotice()))
-                .collect(Collectors.toList());
-        return careerDetailDtos;
-
+        return careerDetailRepository.findDetail(careerUuid);
     }
 }
